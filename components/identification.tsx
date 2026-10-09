@@ -36,16 +36,26 @@ export function Identification() {
     <section
       id="reconocimiento"
       aria-labelledby="identificacion-title"
-      className="relative overflow-hidden bg-[#e8e1d5] px-4 py-14 md:py-20"
+      className="relative overflow-hidden bg-[#d8cbb9] px-4 py-16 md:py-24"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.18]"
+        className="pointer-events-none absolute inset-0 opacity-[0.22]"
         style={{
           backgroundImage:
-            'radial-gradient(rgba(59,42,31,0.18) 0.7px, transparent 0.7px)',
-          backgroundSize: '8px 8px',
+            'radial-gradient(rgba(70,52,38,0.22) 0.7px, transparent 0.7px)',
+          backgroundSize: '7px 7px',
         }}
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-24 top-20 size-72 rounded-full bg-[#b79f82]/20 blur-3xl"
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-24 bottom-20 size-80 rounded-full bg-[#efe5d5]/30 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-4xl">
@@ -54,66 +64,44 @@ export function Identification() {
 
           <h2
             id="identificacion-title"
-            className="mt-3 font-serif font-soft text-[2rem] leading-[1.08] text-balance md:text-5xl"
+            className="mt-3 font-serif font-soft text-[2rem] leading-[1.08] text-balance text-[#3f3025] md:text-5xl"
           >
             Quizás estás atravesando un cambio que todavía no aprendiste a reconocer.
           </h2>
         </div>
 
-        <div className="mx-auto mt-9 grid max-w-3xl gap-3 sm:grid-cols-2 md:mt-10">
-          {cards.map((card, index) => (
+        <div className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-2 md:mt-12">
+          {cards.map((card) => (
             <article
               key={card.title}
-              className="card-float rounded-[1.5rem] bg-[#f0ebe3] px-5 py-5 ring-1 ring-foreground/5 sm:px-6 sm:py-6"
-              style={{
-                animationDelay: `${index * -0.7}s`,
-              }}
+              className="relative overflow-hidden rounded-[1.5rem] border border-[#8e765d]/50 bg-[#eee5d7] px-5 py-6 shadow-[0_8px_24px_rgba(72,52,36,0.08)] sm:px-6 sm:py-7"
             >
-              <h3 className="font-serif text-xl leading-tight text-foreground md:text-2xl">
+              <div
+                aria-hidden="true"
+                className="mb-5 h-px w-12 bg-[#9b7650]/70"
+              />
+
+              <h3 className="font-serif text-xl leading-tight text-[#3f3025] md:text-2xl">
                 {card.title}
               </h3>
 
-              <p className="mt-3 text-base leading-relaxed text-muted-foreground md:text-lg">
+              <p className="mt-3 text-base leading-relaxed text-[#665548] md:text-lg">
                 {card.text}
               </p>
             </article>
           ))}
         </div>
 
-        <div className="mx-auto mt-8 max-w-3xl rounded-[1.5rem] bg-background/60 px-6 py-7 text-center ring-1 ring-foreground/5 md:mt-10 md:px-10 md:py-8">
-          <p className="font-serif text-2xl leading-snug text-foreground md:text-[1.7rem]">
+        <div className="mx-auto mt-10 max-w-3xl rounded-[1.5rem] border border-[#8e765d]/35 bg-[#eee5d7]/75 px-6 py-8 text-center shadow-[0_8px_24px_rgba(72,52,36,0.06)] md:mt-12 md:px-10 md:py-9">
+          <p className="font-serif text-2xl leading-snug text-[#3f3025] md:text-[1.7rem]">
             <span className="block">Quizás no estás perdido/a.</span>
 
-            <span className="mt-2 block italic text-primary">
+            <span className="mt-2 block italic text-[#6f583f]">
               Quizás estás en el momento y lugar perfecto, siendo guiado hacia un cambio mayor que todavía no aprendiste a reconocer.
             </span>
           </p>
         </div>
       </div>
-
-      <style>{`
-        .card-float {
-          animation: cardFloat 5s ease-in-out infinite;
-          will-change: transform;
-        }
-
-        @keyframes cardFloat {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-
-          50% {
-            transform: translateY(-4px);
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .card-float {
-            animation: none;
-          }
-        }
-      `}</style>
     </section>
   )
 }
