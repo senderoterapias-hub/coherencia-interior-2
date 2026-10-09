@@ -65,6 +65,13 @@ export default function Page() {
               Quiero descubrir de forma gratuita
             </CtaLink>
 
+            <a
+              href="#about-title"
+              className="mt-4 inline-flex items-center justify-center rounded-full border border-[#8e765d]/40 px-6 py-3 text-sm font-medium text-[#4d3b2e] transition-opacity hover:opacity-70"
+            >
+              ¿Quién soy?
+            </a>
+
             <p className="mt-4 text-sm text-muted-foreground">
               Primera experiencia · a tu ritmo · desde tu celular
             </p>
@@ -244,6 +251,13 @@ export default function Page() {
             >
               Vivir la primera experiencia
             </CtaLink>
+
+            <a
+              href="#about-title"
+              className="mt-4 inline-flex items-center justify-center rounded-full border border-[#8e765d]/40 px-6 py-3 text-sm font-medium text-[#4d3b2e] transition-opacity hover:opacity-70"
+            >
+              ¿Quién soy?
+            </a>
 
             <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
               No necesitás saber hacia dónde te lleva. Solo dar el primer paso.
