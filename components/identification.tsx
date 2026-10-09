@@ -1,35 +1,86 @@
 import { Handwritten } from '@/components/doodles'
 
+const cards = [
+  {
+    title: 'Cambiaste en tu interior',
+    text: 'Sentís que algo dentro tuyo está cambiando, aunque todavía no sabés qué.',
+  },
+  {
+    title: 'Hay cosas que ya no encajan',
+    text: 'Lugares, vínculos y formas de vivir que antes te hacían sentido ya no te llenan de la misma manera.',
+  },
+  {
+    title: 'A veces conectás, a veces no',
+    text: 'Por momentos sentís claridad y conexión. Después volvés a sentirte lejos de vos mism@.',
+  },
+  {
+    title: 'Dos búsquedas alejadas entre sí',
+    text: 'Oscilás entre cumplir metas materiales y una búsqueda más profunda que todavía no sabés cómo nombrar.',
+  },
+  {
+    title: 'Temés perder',
+    text: 'Sentís que si seguís tu búsqueda interna podés perder algo...',
+  },
+  {
+    title: 'Ya no encajás en ciertos lugares',
+    text: 'Incluso rodeado/a de personas que querés, a veces sentís que ya no resonás, tu energía cambió.',
+  },
+  {
+    title: 'Falta algo',
+    text: 'Mirás hacia adentro y aparece una sensación difícil de explicar: como si algo faltara.',
+  },
+]
+
 export function Identification() {
   return (
     <section
       id="reconocimiento"
       aria-labelledby="identificacion-title"
-      className="px-4 py-12 md:py-20"
+      className="relative overflow-hidden bg-[#e8e1d5] px-4 py-14 md:py-20"
     >
-      <div className="mx-auto max-w-3xl rounded-[2rem] bg-card px-6 py-12 shadow-[0_1px_0_0_rgba(59,42,31,0.06)] ring-1 ring-foreground/5 sm:px-10 md:px-16 md:py-16">
-        <Handwritten>¿te está pasando algo de esto?</Handwritten>
-        <h2
-          id="identificacion-title"
-          className="mt-3 font-serif font-soft text-[2rem] leading-[1.1] text-balance md:text-5xl"
-        >
-          Quizás estás atravesando un cambio que todavía no aprendiste a reconocer.
-        </h2>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.18]"
+        style={{
+          backgroundImage:
+            'radial-gradient(rgba(59,42,31,0.18) 0.7px, transparent 0.7px)',
+          backgroundSize: '8px 8px',
+        }}
+      />
 
-        <ul className="mt-10 space-y-4 leading-relaxed text-muted-foreground md:text-lg">
-          <li>Sentís que algo dentro tuyo está cambiando.</li>
-          <li>Cosas que antes te hacían sentido —lugares, formas de relacionarte, formas de ser— ya no te llenan de la misma manera.</li>
-          <li>Sentís que cambiaste, pero todavía no entendés del todo hacia dónde vas.</li>
-          <li>Por momentos sentís claridad y conexión, pero después atravesás períodos en los que volvés a sentirte desconectado/a.</li>
-          <li>Oscilás entre cumplir metas y una búsqueda más material, y otra búsqueda más profunda que todavía se siente difusa.</li>
-          <li>Sentís que estás despertando y no sabés cómo llevar eso a tu vida.</li>
-          <li>Incluso estando rodeado/a de personas que querés, a veces sentís que ya no encajás del mismo modo.</li>
-          <li>Mirás hacia adentro y aparece una sensación difícil de explicar: <strong className="font-medium text-foreground">como si algo faltara.</strong></li>
-        </ul>
+      <div className="relative mx-auto max-w-4xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <Handwritten>¿te está pasando algo de esto?</Handwritten>
 
-        <div className="mt-10 rounded-[1.5rem] bg-background/70 px-6 py-7 ring-1 ring-foreground/5 md:px-8">
+          <h2
+            id="identificacion-title"
+            className="mt-3 font-serif font-soft text-[2rem] leading-[1.08] text-balance md:text-5xl"
+          >
+            Quizás estás atravesando un cambio que todavía no aprendiste a reconocer.
+          </h2>
+        </div>
+
+        <div className="mx-auto mt-9 grid max-w-3xl gap-3 sm:grid-cols-2 md:mt-10">
+          {cards.map((card) => (
+            <article
+              key={card.title}
+              className="rounded-[1.5rem] bg-[#f0ebe3] px-5 py-5 ring-1 ring-foreground/5 sm:px-6 sm:py-6"
+            >
+              <h3 className="font-serif text-xl leading-tight text-foreground md:text-2xl">
+                {card.title}
+              </h3>
+
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">
+                {card.text}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        <div className="mx-auto mt-8 max-w-3xl rounded-[1.5rem] bg-background/60 px-6 py-7 text-center ring-1 ring-foreground/5 md:mt-10 md:px-10 md:py-8">
           <p className="font-serif text-2xl leading-snug text-foreground md:text-[1.7rem]">
             <span className="block">Quizás no estás perdido/a.</span>
+
             <span className="mt-2 block italic text-primary">
               Quizás estás en el momento y lugar perfecto, siendo guiado hacia un cambio mayor que todavía no aprendiste a reconocer.
             </span>
