@@ -1,6 +1,3 @@
-'use client'
-
-import { useEffect, useRef, useState } from 'react'
 import { Handwritten } from '@/components/doodles'
 
 const cards = [
@@ -34,67 +31,6 @@ const cards = [
   },
 ]
 
-function RevealCard({
-  title,
-  text,
-  index,
-}: {
-  title: string
-  text: string
-  index: number
-}) {
-  const ref = useRef<HTMLElement | null>(null)
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    const element = ref.current
-
-    if (!element) return
-
-    const startObserver = window.setTimeout(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setVisible(true)
-            observer.unobserve(element)
-          }
-        },
-        {
-          threshold: 0.05,
-          rootMargin: '0px 0px -5% 0px',
-        },
-      )
-
-      observer.observe(element)
-    }, 150)
-
-    return () => window.clearTimeout(startObserver)
-  }, [])
-
-  return (
-    <article
-      ref={ref}
-      className={`rounded-[1.5rem] bg-[#f0ebe3] px-5 py-5 ring-1 ring-foreground/5 transition-all duration-[900ms] ease-out sm:px-6 sm:py-6 ${
-        visible
-          ? 'translate-y-0 opacity-100 blur-0'
-          : 'translate-y-6 opacity-0 blur-[8px]'
-      }`}
-      style={{
-        transitionDelay: `${index * 100}ms`,
-        willChange: 'transform, opacity, filter',
-      }}
-    >
-      <h3 className="font-serif text-xl leading-tight text-foreground md:text-2xl">
-        {title}
-      </h3>
-
-      <p className="mt-3 text-base leading-relaxed text-muted-foreground md:text-lg">
-        {text}
-      </p>
-    </article>
-  )
-}
-
 export function Identification() {
   return (
     <section
@@ -126,12 +62,21 @@ export function Identification() {
 
         <div className="mx-auto mt-9 grid max-w-3xl gap-3 sm:grid-cols-2 md:mt-10">
           {cards.map((card, index) => (
-            <RevealCard
+            <article
               key={card.title}
-              title={card.title}
-              text={card.text}
-              index={index}
-            />
+              className="card-discovery rounded-[1.5rem] bg-[#f0ebe3] px-5 py-5 ring-1 ring-foreground/5 sm:px-6 sm:py-6"
+              style={{
+                animationDelay: `${index * 120}ms`,
+              }}
+            >
+              <h3 className="font-serif text-xl leading-tight text-foreground md:text-2xl">
+                {card.title}
+              </h3>
+
+              <p className="mt-3 text-base leading-relaxed text-muted-foreground md:text-lg">
+                {card.text}
+              </p>
+            </article>
           ))}
         </div>
 
@@ -145,6 +90,45 @@ export function Identification() {
           </p>
         </div>
       </div>
+
+      <style jsx>{`
+        .card-discovery {
+          opacity: 0;
+          filter: blur(4px);
+          transform: translateY(14px);
+          animation: discovery 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+          will-change: opacity, transform, filter;
+        }
+
+        @keyframes discovery {
+          0% {
+            opacity: 0;
+            filter: blur(4px);
+            transform: translateY(14px);
+          }
+
+          60% {
+            opacity: 1;
+            filter: blur(0.5px);
+            transform: translateY(-2px);
+          }
+
+          100% {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .card-discovery {
+            opacity: 1;
+            filter: none;
+            transform: none;
+            animation: none;
+          }
+        }
+      `}</style>
     </section>
   )
 }
