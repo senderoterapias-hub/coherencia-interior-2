@@ -1,349 +1,411 @@
-import { FreeStart } from '@/components/free-start'
-import { Hero } from '@/components/hero'
-import { Identification } from '@/components/identification'
-import { About } from '@/components/about'
-import { SiteFooter } from '@/components/site-footer'
-import { SiteHeader } from '@/components/site-header'
-import { StagesAccordion } from '@/components/stages-accordion'
-import { Handwritten, Sparkle } from '@/components/doodles'
 import { CtaLink } from '@/components/cta-link'
+import { Handwritten } from '@/components/doodles'
+import { ArrowDown, Headphones, NotebookPen, Play, Video } from 'lucide-react'
 import {
-  FIRST_STAGE_WHATSAPP_URL,
+  DEEP_EXPERIENCE_WHATSAPP_URL,
   HOTMART_URL,
   FULL_PROCESS_PRICE,
 } from '@/lib/site'
 
-export default function Page() {
+export default function PrimeraEtapaPage() {
   return (
-    <>
-      <SiteHeader />
+    <main className="min-h-screen">
+      {/* INTRO */}
+      <section className="px-5 pb-16 pt-16 md:pb-24 md:pt-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <Handwritten className="rotate-1">
+            Coherencia Interior
+          </Handwritten>
 
-      <main>
-        <Hero />
-        <Identification />
+          <h1 className="mt-3 font-serif font-soft text-[2.5rem] leading-[1.05] text-balance md:text-6xl">
+            Primera etapa
+            <span className="block italic text-primary">
+              gratuita
+            </span>
+          </h1>
 
-        <section
-          id="reconocimiento"
-          aria-labelledby="sabe-title"
-          className="px-5 py-20 md:py-28"
-        >
-          <div className="mx-auto max-w-2xl text-center">
-            <Handwritten>algo en vos ya lo sabe</Handwritten>
+          <p className="mx-auto mt-7 max-w-xl font-serif font-soft text-xl leading-snug text-balance md:text-2xl">
+            Una primera experiencia para comenzar a mirar, experimentar e integrar.
+          </p>
 
-            <h2
-              id="sabe-title"
-              className="mt-3 font-serif font-soft text-[2.1rem] leading-[1.1] text-balance md:text-5xl"
-            >
-              Tal vez hace tiempo venís pidiendo señales.
-            </h2>
+          <p className="mx-auto mt-5 max-w-lg leading-[1.8] text-muted-foreground text-pretty md:text-lg">
+            Recorré esta etapa a tu ritmo. No necesitás hacer todo de una vez.
+            Permitite vivir cada parte de la experiencia y observar qué sucede
+            dentro tuyo.
+          </p>
 
-            <div className="mx-auto mt-8 max-w-xl space-y-5 leading-[1.8] text-muted-foreground text-pretty md:text-lg">
-              <p>Tal vez esperás encontrar algo que te haga resonar.</p>
+          <ArrowDown
+            aria-hidden="true"
+            className="mx-auto mt-10 size-5 text-primary"
+            strokeWidth={1.5}
+          />
+        </div>
+      </section>
 
-              <p>
-                Algo que te confirme que eso que empezaste a sentir no es
-                solamente una idea loca.
-              </p>
+      {/* AULA — ATMÓSFERA PROPIA */}
+      <div className="relative overflow-hidden">
+        {/* Entrada suave al Aula */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 z-20 h-48 bg-gradient-to-b from-background via-[#E8D9C2]/85 to-transparent"
+        />
 
-              <p>Y por momentos lo sentís.</p>
+        {/* Fondo base */}
+        <div className="absolute inset-0 bg-[#D8C4A8]" />
 
-              <p>Pero todavía no sabés cómo acceder a ello.</p>
-            </div>
+        {/* Degradados orgánicos */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage: `
+              radial-gradient(
+                ellipse 75% 45% at 12% 18%,
+                rgba(247, 238, 221, 0.72) 0%,
+                rgba(247, 238, 221, 0.30) 34%,
+                transparent 68%
+              ),
+              radial-gradient(
+                ellipse 65% 50% at 88% 28%,
+                rgba(122, 91, 63, 0.18) 0%,
+                rgba(122, 91, 63, 0.08) 38%,
+                transparent 72%
+              ),
+              radial-gradient(
+                ellipse 70% 55% at 18% 78%,
+                rgba(188, 150, 108, 0.34) 0%,
+                rgba(188, 150, 108, 0.12) 40%,
+                transparent 72%
+              ),
+              radial-gradient(
+                ellipse 75% 55% at 88% 86%,
+                rgba(95, 72, 52, 0.20) 0%,
+                rgba(95, 72, 52, 0.08) 40%,
+                transparent 75%
+              )
+            `,
+          }}
+        />
 
-            <Sparkle className="mx-auto mt-8 size-6" />
+        {/* Textura tipo papel / grano */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-[0.18] mix-blend-multiply"
+          style={{
+            backgroundImage: `
+              radial-gradient(
+                circle at 20% 30%,
+                rgba(59, 42, 31, 0.22) 0,
+                transparent 1.2px
+              ),
+              radial-gradient(
+                circle at 70% 60%,
+                rgba(255, 250, 240, 0.35) 0,
+                transparent 1.4px
+              )
+            `,
+            backgroundSize: '7px 7px, 11px 11px',
+          }}
+        />
 
-            <div className="mt-7">
-              <p className="font-serif text-2xl leading-snug md:text-3xl">
-                Hay mucho disponible para vos.
-              </p>
+        {/* Velo cálido para integrar las capas */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[#E7D7BF]/20"
+        />
 
-              <p className="mt-2 font-serif text-xl italic text-primary md:text-2xl">
-                Aunque todavía no lográs verlo con claridad.
-              </p>
-            </div>
+        <div className="relative z-10">
+          {/* 01 — MIRAR */}
+          <section
+            aria-labelledby="mirar-title"
+            className="px-4 pb-16 pt-28 md:pb-24 md:pt-32"
+          >
+            <div className="mx-auto max-w-5xl">
+              <div className="mb-10 text-center">
+                <span className="inline-flex items-center gap-2 text-sm font-medium tracking-[0.18em] text-primary uppercase">
+                  <Video className="size-4" strokeWidth={1.5} />
+                  01 · Mirar
+                </span>
 
-            <CtaLink
-              href="/primera-etapa"
-              className="mt-9 w-full sm:w-auto"
-            >
-              Quiero descubrir de forma gratuita
-            </CtaLink>
+                <h2
+                  id="mirar-title"
+                  className="mt-3 font-serif font-soft text-[2.1rem] leading-[1.1] text-balance md:text-5xl"
+                >
+                  La clase
+                </h2>
 
-            <a
-              href="#about-title"
-              className="mt-4 inline-flex items-center justify-center rounded-full border border-[#8e765d]/40 px-6 py-3 text-sm font-medium text-[#4d3b2e] transition-opacity hover:opacity-70"
-            >
-              ¿Quién soy?
-            </a>
-
-            <p className="mt-4 text-sm text-muted-foreground">
-              Primera experiencia · a tu ritmo · desde tu celular
-            </p>
-          </div>
-        </section>
-
-        <section
-          aria-labelledby="donde-title"
-          className="bg-card px-5 py-20 md:py-28"
-        >
-          <div className="mx-auto max-w-2xl text-center">
-            <Handwritten className="rotate-1">
-              quizás estás donde necesitás estar
-            </Handwritten>
-
-            <h2
-              id="donde-title"
-              className="mt-3 font-serif font-soft text-[2.1rem] leading-[1.1] text-balance md:text-5xl"
-            >
-              No necesitás comprenderlo todo para comenzar a vivirlo.
-            </h2>
-
-            <div className="mx-auto mt-8 max-w-xl space-y-5 leading-[1.8] text-muted-foreground text-pretty md:text-lg">
-              <p>
-                Lo que estás atravesando puede ser parte de un proceso mucho
-                más grande.
-              </p>
-
-              <p>Un proceso natural.</p>
-
-              <p>
-                Un proceso que no necesitás comprender completamente para
-                comenzar a vivirlo.
-              </p>
-            </div>
-
-            <div className="mx-auto mt-9 max-w-md space-y-2 font-serif text-xl leading-snug md:text-2xl">
-              <p>No estás llegando tarde.</p>
-              <p>No estás haciendo algo mal.</p>
-              <p>No necesitás tener todas las respuestas.</p>
-            </div>
-
-            <p className="mx-auto mt-9 max-w-xl font-serif text-2xl leading-snug md:text-3xl">
-              Hay algo en vos que comenzó a despertar.
-
-              <span className="mt-2 block italic text-primary">
-                Y quizás este momento sea justamente parte de ese llamado.
-              </span>
-            </p>
-          </div>
-        </section>
-
-        <FreeStart />
-
-        <About />
-
-        <section
-          id="camino"
-          aria-labelledby="camino-title"
-          className="px-5 py-20 md:py-28"
-        >
-          <div className="mx-auto max-w-3xl text-center">
-            <Handwritten>el camino</Handwritten>
-
-            <h2
-              id="camino-title"
-              className="mt-3 font-serif font-soft text-[2.1rem] leading-[1.1] text-balance md:text-5xl"
-            >
-              Un camino para descubrir lo que está despertando en vos.
-            </h2>
-
-            <StagesAccordion />
-          </div>
-        </section>
-
-        <section
-          aria-labelledby="acompanamiento-title"
-          className="bg-primary px-5 py-20 text-primary-foreground md:py-28"
-        >
-          <div className="mx-auto max-w-2xl text-center">
-            <Handwritten className="text-primary-foreground">
-              no tenés que atravesarlo solo/a
-            </Handwritten>
-
-            <h2
-              id="acompanamiento-title"
-              className="mt-3 font-serif font-soft text-[2.1rem] leading-[1.1] text-balance md:text-5xl"
-            >
-              Yo también recorrí este proceso.
-            </h2>
-
-            <div className="mx-auto mt-7 max-w-xl space-y-5 leading-[1.8] text-primary-foreground/80 text-pretty md:text-lg">
-              <p>
-                Y además de haberlo vivido, acompañé a muchas personas a
-                atravesarlo.
-              </p>
-
-              <p>
-                Conozco las preguntas, las dudas y los recovecos del sendero.
-              </p>
-
-              <p>
-                Por eso no tenés que saber exactamente qué te pasa para
-                comenzar.
-              </p>
-            </div>
-
-            <p className="mx-auto mt-8 max-w-xl font-serif text-xl leading-snug md:text-2xl">
-              Incluso en esta primera experiencia gratuita, podés escribirme y
-              contarme cómo te sentís.
-            </p>
-
-            <CtaLink
-              href={FIRST_STAGE_WHATSAPP_URL}
-              variant="butter"
-              className="mt-8 w-full sm:w-auto"
-            >
-              Contame cómo te sentís con esto
-            </CtaLink>
-
-            <CtaLink
-              href="/primera-etapa"
-              className="mt-4 w-full sm:w-auto"
-            >
-              Vivir la experiencia gratuita
-            </CtaLink>
-
-            <p className="mt-5 text-sm text-primary-foreground/60">
-              Y si después sentís que querés avanzar, también puedo acompañarte
-              más de cerca.
-            </p>
-          </div>
-        </section>
-
-        <section
-          aria-labelledby="despues-title"
-          className="px-5 py-20 md:py-28"
-        >
-          <div className="mx-auto max-w-2xl text-center">
-            <Handwritten>¿y después de ese primer paso?</Handwritten>
-
-            <h2
-              id="despues-title"
-              className="mt-3 font-serif font-soft text-[2.1rem] leading-[1.1] text-balance md:text-5xl"
-            >
-              Primero vivilo.
-            </h2>
-
-            <div className="mx-auto mt-7 max-w-xl space-y-5 leading-[1.8] text-muted-foreground text-pretty md:text-lg">
-              <p>Mirás qué sucede en vos.</p>
-
-              <p>Sentís si algo de esto resuena.</p>
-
-              <p>
-                Y si en algún momento sentís que querés profundizar, podemos
-                recorrer el camino juntos.
-              </p>
-            </div>
-
-            <p className="mt-8 font-serif text-xl italic text-foreground md:text-2xl">
-              Sin apuro. A tu ritmo.
-            </p>
-          </div>
-        </section>
-
-        {/* SESIÓN 1 A 1 — INCLUIDA EN EL PROCESO COMPLETO */}
-        <section
-          aria-labelledby="sesion-title"
-          className="px-5 pb-20 pt-2 md:pb-28"
-        >
-          <div className="mx-auto max-w-3xl">
-            <div className="relative overflow-hidden rounded-[2rem] bg-card p-7 text-center shadow-[0_24px_70px_rgba(59,42,31,0.14)] ring-1 ring-primary/20 md:p-12">
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-0 top-0 h-1.5 bg-primary"
-              />
-
-              <span className="inline-flex items-center rounded-full bg-butter px-4 py-2 text-[0.68rem] font-semibold tracking-[0.16em] text-foreground uppercase ring-1 ring-foreground/10"
-              >
-                Incluido en el proceso completo
-              </span>
-
-              <Handwritten className="mt-7 rotate-1">
-                un espacio para vos
-              </Handwritten>
-
-              <h2
-                id="sesion-title"
-                className="mx-auto mt-3 max-w-2xl font-serif font-soft text-[2.15rem] leading-[1.08] text-balance md:text-4xl"
-              >
-                Además de las 4 etapas, tenés una sesión 1 a 1 conmigo.
-              </h2>
-
-              <p className="mx-auto mt-6 max-w-2xl text-base leading-[1.8] text-muted-foreground text-pretty md:text-lg">
-                Una sesión personalizada para conocer tu proceso, profundizar
-                en lo que estés atravesando y acompañarte desde tu experiencia.
-              </p>
-
-              <div className="mx-auto mt-7 max-w-xl rounded-2xl bg-background/70 px-5 py-4 ring-1 ring-foreground/5">
-                <p className="text-sm leading-relaxed text-foreground md:text-base">
-                  También contás con{' '}
-                  <strong className="font-medium">
-                    acompañamiento por WhatsApp
-                  </strong>{' '}
-                  durante el recorrido.
+                <p className="mx-auto mt-5 max-w-xl leading-[1.8] text-muted-foreground text-pretty md:text-lg">
+                  Comenzá por la clase. Es el punto de partida para comprender
+                  dónde estás y empezar a observar tu propia experiencia.
                 </p>
               </div>
 
-              <p className="mx-auto mt-6 max-w-xl font-serif font-soft text-lg leading-snug text-foreground md:text-xl">
-                Esta sesión ya está incluida al acceder al proceso completo.
-              </p>
-
-              <CtaLink
-                href={HOTMART_URL}
-                variant="primary"
-                className="mt-8 w-full sm:w-auto"
-              >
-                Quiero continuar con Coherencia Interior
-              </CtaLink>
-
-              <p className="mt-4 text-sm text-muted-foreground">
-                4 etapas · WhatsApp · 1 sesión individual 1 a 1
-              </p>
-
-              <p className="mt-2 text-xs text-muted-foreground/70">
-                {FULL_PROCESS_PRICE} · proceso completo
-              </p>
+              <div className="overflow-hidden rounded-[1.75rem] bg-card/95 p-2 shadow-[0_18px_50px_rgba(59,42,31,0.10)] ring-1 ring-foreground/10 backdrop-blur-sm md:p-3">
+                <div className="aspect-video overflow-hidden rounded-[1.25rem] bg-black">
+                  <iframe
+                    className="h-full w-full"
+                    src="https://www.youtube.com/embed/2iMcHiU-DqA"
+                    title="Clase 1 de Coherencia Interior: La Consciencia"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section
-          aria-labelledby="final-title"
-          className="px-5 pb-24 pt-4 md:pb-32"
-        >
-          <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
-            <Sparkle className="size-6 text-primary" />
+          {/* 02 — EXPERIMENTAR */}
+          <section
+            aria-labelledby="experimentar-title"
+            className="relative px-4 py-16 md:py-24"
+          >
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 top-0 h-px bg-foreground/5"
+            />
 
-            <h2
-              id="final-title"
-              className="mt-6 font-serif font-soft text-[2.4rem] leading-[1.05] text-balance md:text-6xl"
-            >
-              Quizás esto era la señal que estabas esperando.
-            </h2>
+            <div className="mx-auto max-w-3xl text-center">
+              <span className="inline-flex items-center gap-2 text-sm font-medium tracking-[0.18em] text-primary uppercase">
+                <Headphones className="size-4" strokeWidth={1.5} />
+                02 · Experimentar
+              </span>
+
+              <h2
+                id="experimentar-title"
+                className="mt-3 font-serif font-soft text-[2.1rem] leading-[1.1] text-balance md:text-5xl"
+              >
+                Acompañá tus días con esta Meditación Guiada
+              </h2>
+
+              <p className="mx-auto mt-5 max-w-xl leading-[1.8] text-muted-foreground text-pretty md:text-lg">
+                Después de la clase, podés continuar con esta práctica.
+                Te recomiendo practicarla en la mañana y antes de ir a dormir.
+              </p>
+
+              <div className="mx-auto mt-10 max-w-xl rounded-[1.75rem] bg-card/95 p-7 shadow-[0_18px_50px_rgba(59,42,31,0.08)] ring-1 ring-foreground/10 backdrop-blur-sm md:p-10">
+                <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-butter">
+                  <Play
+                    aria-hidden="true"
+                    className="ml-0.5 size-5"
+                    fill="currentColor"
+                    strokeWidth={1.5}
+                  />
+                </div>
+
+                <h3 className="mt-5 font-serif font-soft text-2xl md:text-3xl">
+                  Meditación guiada
+                </h3>
+
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+                  Una práctica para llevar la experiencia de la clase a tu propio
+                  espacio interior.
+                </p>
+
+                <audio
+                  className="mt-7 w-full"
+                  controls
+                  preload="metadata"
+                >
+                  <source
+                    src="/Meditacio%CC%81n%20Guiada.m4a"
+                    type="audio/mp4"
+                  />
+                  Tu navegador no puede reproducir este audio.
+                </audio>
+
+                <p className="mt-4 text-xs text-muted-foreground">
+                  Podés escucharla cuando quieras y volver a ella las veces que necesites.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* 03 — INTEGRAR */}
+          <section
+            aria-labelledby="integrar-title"
+            className="px-4 py-16 md:py-24"
+          >
+            <div className="mx-auto max-w-4xl text-center">
+              <span className="inline-flex items-center gap-2 text-sm font-medium tracking-[0.18em] text-primary uppercase">
+                <NotebookPen className="size-4" strokeWidth={1.5} />
+                03 · Integrar
+              </span>
+
+              <h2
+                id="integrar-title"
+                className="mt-3 font-serif font-soft text-[2.1rem] leading-[1.1] text-balance md:text-5xl"
+              >
+                La bitácora
+              </h2>
+
+              <p className="mx-auto mt-5 max-w-xl leading-[1.8] text-muted-foreground text-pretty md:text-lg">
+                La bitácora es un espacio para registrar lo que vas descubriendo,
+                poner en palabras tu experiencia y profundizar el proceso.
+                <br />
+                <br />
+                Te recomiendo descargarla luego de ver la clase y trabajar con ella
+                durante la semana. Te ayudará a ser más consciente de tus propios
+                procesos internos.
+              </p>
+
+              <div className="mx-auto mt-10 max-w-2xl overflow-hidden rounded-[1.75rem] bg-card/95 shadow-[0_18px_50px_rgba(59,42,31,0.08)] ring-1 ring-foreground/10 backdrop-blur-sm">
+                <div className="h-56 bg-background md:h-64">
+                  <iframe
+                    className="h-full w-full"
+                    src="/Bitacora%20de%20acompan%CC%83amiento.pdf"
+                    title="Bitácora de acompañamiento"
+                  />
+                </div>
+
+                <div className="flex flex-col items-center gap-4 p-6 sm:flex-row sm:justify-center">
+                  <a
+                    href="/Bitacora%20de%20acompan%CC%83amiento.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-12 items-center justify-center rounded-full bg-primary px-7 py-3 text-sm font-medium text-primary-foreground shadow-[0_3px_0_0_rgba(59,42,31,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#535e31] hover:shadow-[0_5px_0_0_rgba(59,42,31,0.18)]"
+                  >
+                    ABRIR BITÁCORA
+                  </a>
+
+                  <a
+                    href="/Bitacora%20de%20acompan%CC%83amiento.pdf"
+                    download
+                    className="inline-flex min-h-12 items-center justify-center rounded-full bg-butter px-7 py-3 text-sm font-medium text-foreground shadow-[0_3px_0_0_rgba(59,42,31,0.14)] ring-1 ring-foreground/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3dc9f] hover:shadow-[0_5px_0_0_rgba(59,42,31,0.14)]"
+                  >
+                    DESCARGAR BITÁCORA
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* BENEFICIO ESPECIAL — PROCESO COMPLETO */}
+          <section
+            aria-labelledby="continuar-title"
+            className="px-4 pb-20 pt-4 md:pb-28 md:pt-8"
+          >
+            <div className="mx-auto max-w-3xl">
+              <div className="relative overflow-hidden rounded-[2rem] bg-card p-7 text-center shadow-[0_24px_70px_rgba(59,42,31,0.16)] ring-1 ring-primary/20 md:p-12">
+                {/* Detalle superior */}
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-x-0 top-0 h-1.5 bg-primary"
+                />
+
+                <span className="inline-flex items-center rounded-full bg-butter px-4 py-2 text-[0.68rem] font-semibold tracking-[0.16em] text-foreground uppercase ring-1 ring-foreground/10">
+                  Incluido en el proceso completo
+                </span>
+
+                <Handwritten className="mt-7 rotate-1">
+                  un espacio para vos
+                </Handwritten>
+
+                <h2
+                  id="continuar-title"
+                  className="mx-auto mt-3 max-w-2xl font-serif font-soft text-[2.15rem] leading-[1.08] text-balance md:text-4xl"
+                >
+                  Además de las 4 etapas, tenés una sesión 1 a 1 conmigo.
+                </h2>
+
+                <p className="mx-auto mt-6 max-w-2xl text-base leading-[1.8] text-muted-foreground text-pretty md:text-lg">
+                  Una sesión personalizada para conocer tu proceso, profundizar
+                  en lo que estés atravesando y acompañarte desde tu experiencia.
+                </p>
+
+                <div className="mx-auto mt-7 max-w-xl rounded-2xl bg-background/70 px-5 py-4 ring-1 ring-foreground/5">
+                  <p className="text-sm leading-relaxed text-foreground md:text-base">
+                    También contás con{' '}
+                    <strong className="font-medium">
+                      acompañamiento por WhatsApp
+                    </strong>{' '}
+                    durante el recorrido.
+                  </p>
+                </div>
+
+                <p className="mx-auto mt-6 max-w-xl font-serif font-soft text-lg leading-snug text-foreground md:text-xl">
+                  Esta sesión ya está incluida al acceder al proceso completo.
+                </p>
+
+                <CtaLink
+                  href={HOTMART_URL}
+                  variant="primary"
+                  className="mt-8 w-full sm:w-auto"
+                >
+                  Quiero continuar con Coherencia Interior
+                </CtaLink>
+
+                <p className="mt-4 text-sm text-muted-foreground">
+                  4 etapas · WhatsApp · 1 sesión individual 1 a 1
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* Salida gradual del Aula */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-48 bg-gradient-to-t from-background via-[#E8D9C2]/85 to-transparent"
+        />
+      </div>
+
+      {/* CIERRE */}
+      <section className="px-5 pb-20 pt-16 md:pb-32 md:pt-24">
+        <div className="mx-auto max-w-2xl text-center">
+          <Handwritten>cuando termines</Handwritten>
+
+          <h2 className="mt-3 font-serif font-soft text-[2.1rem] leading-[1.1] text-balance md:text-5xl">
+            Ahora dejá que la experiencia
+            <span className="block italic text-primary">
+              decante.
+            </span>
+          </h2>
+
+          <p className="mx-auto mt-7 max-w-lg leading-[1.8] text-muted-foreground text-pretty md:text-lg">
+            No necesitás sacar conclusiones inmediatamente. Observá qué
+            apareció, qué comprendiste y qué empezó a moverse en vos.
+          </p>
+
+          <div className="mx-auto mt-10 max-w-md rounded-[1.75rem] bg-primary px-6 py-9 text-primary-foreground md:px-10">
+            <p className="font-serif font-soft text-xl leading-snug md:text-2xl">
+              Si sentís que querés continuar profundizando este camino,
+              podés conocer el proceso completo.
+            </p>
 
             <CtaLink
-              href="/primera-etapa"
-              className="mt-9 w-full sm:w-auto"
-              pulse
+              href={HOTMART_URL}
+              variant="butter"
+              className="mt-7 w-full sm:w-auto"
             >
-              Vivir la primera experiencia
+              Continuar con Coherencia Interior
             </CtaLink>
 
-            <a
-              href="#about-title"
-              className="mt-4 inline-flex items-center justify-center rounded-full border border-[#8e765d]/40 px-6 py-3 text-sm font-medium text-[#4d3b2e] transition-opacity hover:opacity-70"
-            >
-              ¿Quién soy?
-            </a>
-
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
-              No necesitás saber hacia dónde te lleva. Solo dar el primer paso.
+            <p className="mt-4 text-sm text-primary-foreground/70">
+              {FULL_PROCESS_PRICE} · proceso completo
             </p>
           </div>
-        </section>
-      </main>
 
-      <SiteFooter />
-    </>
+          <div className="mx-auto mt-8 max-w-md rounded-[1.75rem] bg-card p-7 ring-1 ring-foreground/5 md:p-8">
+            <h3 className="font-serif font-soft text-2xl leading-snug md:text-3xl">
+              ¿Querés vivirlo con mayor profundidad?
+            </h3>
+
+            <p className="mt-4 leading-[1.8] text-muted-foreground text-pretty md:text-base">
+              Si querés vivir el proceso de Coherencia Interior con mayor
+              profundidad, te recomiendo acompañarlo con sesiones 1 a 1 conmigo.
+            </p>
+
+            <a
+              href={DEEP_EXPERIENCE_WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex w-full items-center justify-center rounded-full border border-foreground/15 px-6 py-3 text-center text-sm font-medium transition-colors hover:bg-background"
+            >
+              Quiero saber más sobre la experiencia profunda
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
   )
 }
