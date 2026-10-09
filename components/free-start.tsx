@@ -26,7 +26,7 @@ const items = [
 export function FreeStart() {
   return (
     <section
-      id="primera-etapa"
+      id="comenzar-gratis"
       aria-labelledby="comenzar-title"
       className="relative isolate scroll-mt-6 overflow-hidden px-4 pb-20 pt-16 md:pb-28 md:pt-24"
     >
@@ -50,7 +50,9 @@ export function FreeStart() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="flex flex-col items-center text-center">
-          <Handwritten className="rotate-1">si algo de esto resonó con vos</Handwritten>
+          <Handwritten className="rotate-1">
+            si algo de esto resonó con vos
+          </Handwritten>
 
           <h2
             id="comenzar-title"
@@ -68,7 +70,11 @@ export function FreeStart() {
           </p>
 
           <p className="mt-5 max-w-xl leading-[1.8] text-muted-foreground text-pretty md:text-lg">
-            Preparé una primera experiencia para que puedas <strong className="font-medium text-foreground">entrar en contacto con este proceso</strong>, sin necesidad de saber exactamente qué estás buscando.
+            Preparé una primera experiencia para que puedas{' '}
+            <strong className="font-medium text-foreground">
+              entrar en contacto con este proceso
+            </strong>
+            , sin necesidad de saber exactamente qué estás buscando.
           </p>
 
           <Sparkle className="mt-7 size-6" />
@@ -76,23 +82,40 @@ export function FreeStart() {
           <div className="mt-9 grid w-full gap-4 text-left md:grid-cols-3">
             {items.map((item) => {
               const Icon = item.icon
+
               return (
                 <article
                   key={item.number}
                   className="rounded-[1.5rem] bg-card/95 p-6 shadow-[0_12px_35px_rgba(59,42,31,0.07)] ring-1 ring-foreground/5 backdrop-blur-sm"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="text-sm font-medium tracking-[0.12em] text-primary">{item.number}</span>
-                    <Icon className="size-5 text-primary" strokeWidth={1.5} />
+                    <span className="text-sm font-medium tracking-[0.12em] text-primary">
+                      {item.number}
+                    </span>
+
+                    <Icon
+                      className="size-5 text-primary"
+                      strokeWidth={1.5}
+                    />
                   </div>
-                  <h3 className="mt-4 font-serif font-soft text-2xl">{item.title}</h3>
-                  <p className="mt-2 leading-relaxed text-muted-foreground">{item.text}</p>
+
+                  <h3 className="mt-4 font-serif font-soft text-2xl">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-2 leading-relaxed text-muted-foreground">
+                    {item.text}
+                  </p>
                 </article>
               )
             })}
           </div>
 
-          <CtaLink href="/primera-etapa" className="mt-9 w-full sm:w-auto" pulse>
+          <CtaLink
+            href="/primera-etapa"
+            className="mt-9 w-full sm:w-auto"
+            pulse
+          >
             VIVIR LA PRIMERA EXPERIENCIA
           </CtaLink>
 
