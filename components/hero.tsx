@@ -53,23 +53,24 @@ export function Hero() {
           No necesitás cambiar todo de un día para otro. Se trata de comprender cómo funciona tu Ser único y descubrir nuevas formas de experimentar la vida que realmente tengan sentido.
         </p>
 
-        <CtaLink
+        {/* BOTÓN NUEVO — AULA */}
+        <a
           href="/primera-etapa"
-          className="mt-10 w-full sm:w-auto"
+          className="mt-10 inline-flex w-full items-center justify-center rounded-full bg-primary px-7 py-4 text-sm font-medium tracking-[0.08em] text-primary-foreground shadow-[0_10px_30px_rgba(95,107,58,0.22)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_14px_36px_rgba(95,107,58,0.32)] sm:w-auto"
         >
-          Comenzar gratuitamente
-        </CtaLink>
+          COMENZAR LA PRIMERA ETAPA
+        </a>
 
         <div className="mt-5 flex flex-col items-center">
           <p className="font-serif text-base italic text-muted-foreground">
-            seguir conociendo Coherencia Interior
+            una experiencia gratuita
           </p>
 
           <CurlyArrow className="mt-1 size-8 rotate-[80deg] text-primary/70" />
         </div>
 
         <p className="mt-2 text-sm text-muted-foreground">
-          Gratis · a tu ritmo · desde tu celular
+          Clase · Meditación · Bitácora
         </p>
       </div>
     </section>
