@@ -1,8 +1,8 @@
 import { FreeStart } from '@/components/free-start'
 import { Hero } from '@/components/hero'
 import { Identification } from '@/components/identification'
+import { About } from '@/components/about'
 import { SiteFooter } from '@/components/site-footer'
-import { SiteHeader } from '@/components/site-header'
 import { StagesAccordion } from '@/components/stages-accordion'
 import { Handwritten, Sparkle } from '@/components/doodles'
 import { CtaLink } from '@/components/cta-link'
@@ -117,6 +117,8 @@ export default function Page() {
         </section>
 
         <FreeStart />
+
+        <About />
 
         <section
           id="camino"
