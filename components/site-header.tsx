@@ -9,10 +9,12 @@ export function SiteHeader() {
           <span className="blob absolute left-0 size-4 bg-primary/80" />
           <span className="blob-alt absolute right-0 size-4 bg-terracotta/80 mix-blend-multiply" />
         </span>
+
         Coherencia <span className="-ml-1 italic text-primary">Interior</span>
       </a>
+
       <a
-        href="#primera-etapa"
+        href="/primera-etapa"
         className="rounded-full border border-foreground/15 px-4 py-2 text-sm text-foreground/80 transition-colors hover:border-primary hover:text-primary"
       >
         Primera etapa
