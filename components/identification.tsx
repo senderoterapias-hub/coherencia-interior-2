@@ -64,9 +64,9 @@ export function Identification() {
           {cards.map((card, index) => (
             <article
               key={card.title}
-              className="card-discovery rounded-[1.5rem] bg-[#f0ebe3] px-5 py-5 ring-1 ring-foreground/5 sm:px-6 sm:py-6"
+              className="card-float rounded-[1.5rem] bg-[#f0ebe3] px-5 py-5 ring-1 ring-foreground/5 sm:px-6 sm:py-6"
               style={{
-                animationDelay: `${index * 120}ms`,
+                animationDelay: `${index * -0.7}s`,
               }}
             >
               <h3 className="font-serif text-xl leading-tight text-foreground md:text-2xl">
@@ -91,40 +91,25 @@ export function Identification() {
         </div>
       </div>
 
-      <style jsx>{`
-        .card-discovery {
-          opacity: 0;
-          filter: blur(4px);
-          transform: translateY(14px);
-          animation: discovery 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-          will-change: opacity, transform, filter;
+      <style>{`
+        .card-float {
+          animation: cardFloat 5s ease-in-out infinite;
+          will-change: transform;
         }
 
-        @keyframes discovery {
-          0% {
-            opacity: 0;
-            filter: blur(4px);
-            transform: translateY(14px);
-          }
-
-          60% {
-            opacity: 1;
-            filter: blur(0.5px);
-            transform: translateY(-2px);
-          }
-
+        @keyframes cardFloat {
+          0%,
           100% {
-            opacity: 1;
-            filter: blur(0);
             transform: translateY(0);
+          }
+
+          50% {
+            transform: translateY(-4px);
           }
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .card-discovery {
-            opacity: 1;
-            filter: none;
-            transform: none;
+          .card-float {
             animation: none;
           }
         }
