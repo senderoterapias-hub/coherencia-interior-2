@@ -51,8 +51,8 @@ export function Hero() {
           <span className="font-serif text-foreground">Estás siendo guiado. Confiá en tu corazón.</span>
         </p>
 
-        <CtaLink href="/primera-etapa" className="mt-10 w-full sm:w-auto" pulse>
-          Comenzar la experiencia
+        <CtaLink href="#reconocimiento" className="mt-10 w-full sm:w-auto" pulse>
+          ¿Te acompaño?
         </CtaLink>
 
         <p className="mt-5 text-sm text-muted-foreground">
