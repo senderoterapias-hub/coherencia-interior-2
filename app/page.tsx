@@ -189,7 +189,14 @@ export default function Page() {
               variant="butter"
               className="mt-8 w-full sm:w-auto"
             >
-              Contarme cómo me siento
+              Contame cómo te sentís con esto
+            </CtaLink>
+
+            <CtaLink
+              href="/primera-etapa"
+              className="mt-4 w-full sm:w-auto"
+            >
+              Vivir la experiencia gratuita
             </CtaLink>
 
             <p className="mt-5 text-sm text-primary-foreground/60">
