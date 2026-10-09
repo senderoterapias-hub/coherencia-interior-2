@@ -14,3 +14,7 @@ export const DEEP_EXPERIENCE_WHATSAPP_URL =
   'https://api.whatsapp.com/send/?phone=59897792729&text=Quiero+hacer+el+proceso+de+Coherencia+Interior+completo+y+me+gustar%C3%ADa+conocer+las+sesiones+1+a+1.&type=phone_number&app_absent=0'
 
 export const FULL_PROCESS_PRICE = 'USD 77'
+
+// WhatsApp para quien está atravesando la primera experiencia.
+export const FIRST_STAGE_WHATSAPP_URL =
+  'https://api.whatsapp.com/send/?phone=59897792729&text=Estoy+viviendo+la+primera+experiencia+de+Coherencia+Interior+y+quiero+contarte+como+me+siento.&type=phone_number&app_absent=0'

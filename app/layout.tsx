@@ -19,14 +19,14 @@ const figtree = Figtree({
 })
 
 export const metadata: Metadata = {
-  title: 'Coherencia Interior — Comienza gratuitamente',
+  title: 'Coherencia Interior — Quizás esto sea un llamado',
   description:
-    'Un proceso para disolver la distancia entre tu Despertar interior y la vida que Deseas Vivir. Comienza gratuitamente con la primera etapa.',
+    'Una primera experiencia para reconocer lo que está despertando en vos y comenzar a recorrer este proceso a tu ritmo.',
   generator: 'v0.app',
   openGraph: {
     title: 'Coherencia Interior',
     description:
-      'Un proceso para disolver la distancia entre tu Despertar interior y la vida que Deseas Vivir.',
+      'Quizás esto que estás viviendo no es casualidad. Una primera experiencia para comenzar a reconocer lo que está despertando en vos.',
     locale: 'es_ES',
     type: 'website',
   },

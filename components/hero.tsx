@@ -1,5 +1,5 @@
 import { CtaLink } from '@/components/cta-link'
-import { CurlyArrow, Handwritten, Sparkle, Squiggle } from '@/components/doodles'
+import { CurlyArrow, Handwritten, Sparkle } from '@/components/doodles'
 
 export function Hero() {
   return (
@@ -21,49 +21,42 @@ export function Hero() {
 
       <div className="relative mx-auto flex max-w-xl flex-col items-center text-center md:max-w-3xl">
         <div className="flex flex-col items-center">
-          <Handwritten className="-rotate-2">
-            hola, qué bueno que llegaste
-          </Handwritten>
-
+          <Handwritten className="-rotate-2">quizás esto sea un llamado</Handwritten>
           <CurlyArrow className="mt-1 size-10 rotate-6" />
         </div>
 
         <h1
           id="hero-title"
-          className="mt-4 font-serif font-soft text-[3.25rem] font-normal leading-[0.95] tracking-tight text-balance sm:text-7xl md:text-8xl"
+          className="mt-4 font-serif font-soft text-[3.15rem] font-normal leading-[0.98] tracking-tight text-balance sm:text-7xl md:text-8xl"
         >
-          Coherencia{' '}
-          <span className="relative inline-block italic text-primary">
-            Interior
-            <Squiggle className="absolute -bottom-3 left-0 h-3.5 w-full" />
-          </span>
+          Quizás esto que estás viviendo{' '}
+          <span className="italic text-primary">no es casualidad.</span>
         </h1>
 
-        <p className="mt-10 max-w-md font-serif text-xl leading-snug text-pretty md:max-w-xl md:text-2xl">
-          Un proceso para disolver la distancia entre tu Despertar interior y tu vida cotidiana.
+        <p className="mt-10 max-w-xl font-serif text-xl leading-snug text-pretty md:text-2xl">
+          <span className="italic">Algo dentro tuyo está despertando.</span>
         </p>
 
-        <p className="mt-6 max-w-md leading-relaxed text-muted-foreground text-pretty md:text-lg">
-          Una gran transformación puede comenzar con herramientas simples.
-          <br />
-          <br />
-          No necesitás cambiar todo de un día para otro. Se trata de comprender cómo funciona tu Ser único y descubrir nuevas formas de experimentar la vida que realmente tengan sentido.
+        <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground text-pretty md:text-lg">
+          Y todavía no sabés exactamente qué es, hacia dónde te lleva o qué hacer con eso que está despertando en vos.
         </p>
 
-        <CtaLink href="#primera-etapa" className="mt-10 w-full sm:w-auto">
-          Comenzar gratuitamente
+        <p className="mt-7 max-w-xl font-serif text-xl leading-snug text-pretty md:text-2xl">
+          <strong className="font-medium">Pero no necesitás tener las respuestas todavía.</strong>
+        </p>
+
+        <p className="mt-6 max-w-lg leading-relaxed text-muted-foreground text-pretty md:text-lg">
+          Eso es lo bonito de atravesar un despertar interior.
+          <br />
+          <span className="font-serif text-foreground">Estás siendo guiado. Confiá en tu corazón.</span>
+        </p>
+
+        <CtaLink href="/primera-etapa" className="mt-10 w-full sm:w-auto" pulse>
+          Comenzar la experiencia
         </CtaLink>
 
-        <div className="mt-5 flex flex-col items-center">
-          <p className="font-serif text-base italic text-muted-foreground">
-            seguir conociendo Coherencia Interior
-          </p>
-
-          <CurlyArrow className="mt-1 size-8 rotate-[80deg] text-primary/70" />
-        </div>
-
-        <p className="mt-2 text-sm text-muted-foreground">
-          {'Gratis · a tu ritmo · desde tu celular'}
+        <p className="mt-5 text-sm text-muted-foreground">
+          Gratis · a tu ritmo · desde tu celular
         </p>
       </div>
     </section>
