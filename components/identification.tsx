@@ -2,7 +2,11 @@ import { Handwritten } from '@/components/doodles'
 
 export function Identification() {
   return (
-    <section aria-labelledby="identificacion-title" className="px-4 py-12 md:py-20">
+    <section
+      id="reconocimiento"
+      aria-labelledby="identificacion-title"
+      className="px-4 py-12 md:py-20"
+    >
       <div className="mx-auto max-w-3xl rounded-[2rem] bg-card px-6 py-12 shadow-[0_1px_0_0_rgba(59,42,31,0.06)] ring-1 ring-foreground/5 sm:px-10 md:px-16 md:py-16">
         <Handwritten>¿te está pasando algo de esto?</Handwritten>
         <h2
