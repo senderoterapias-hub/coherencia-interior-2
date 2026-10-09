@@ -55,12 +55,12 @@ function RevealCard({
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true)
-          observer.disconnect()
+          observer.unobserve(element)
         }
       },
       {
-        threshold: 0.2,
-        rootMargin: '0px 0px -8% 0px',
+        threshold: 0.05,
+        rootMargin: '0px 0px -5% 0px',
       },
     )
 
@@ -72,13 +72,14 @@ function RevealCard({
   return (
     <article
       ref={ref}
-      className={`rounded-[1.5rem] bg-[#f0ebe3] px-5 py-5 ring-1 ring-foreground/5 transition-all duration-1000 ease-out sm:px-6 sm:py-6 ${
+      className={`rounded-[1.5rem] bg-[#f0ebe3] px-5 py-5 ring-1 ring-foreground/5 transition-all duration-[900ms] ease-out sm:px-6 sm:py-6 ${
         visible
           ? 'translate-y-0 opacity-100 blur-0'
-          : 'translate-y-5 opacity-0 blur-md'
+          : 'translate-y-6 opacity-0 blur-[8px]'
       }`}
       style={{
-        transitionDelay: `${index * 100}ms`,
+        transitionDelay: `${index * 80}ms`,
+        willChange: 'transform, opacity, filter',
       }}
     >
       <h3 className="font-serif text-xl leading-tight text-foreground md:text-2xl">
