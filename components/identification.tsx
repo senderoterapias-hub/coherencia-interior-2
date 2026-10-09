@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import { Handwritten } from '@/components/doodles'
 
 const cards = [
@@ -31,6 +32,64 @@ const cards = [
   },
 ]
 
+function RevealCard({
+  title,
+  text,
+  index,
+}: {
+  title: string
+  text: string
+  index: number
+}) {
+  const ref = useRef<HTMLElement | null>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const element = ref.current
+
+    if (!element) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+          observer.disconnect()
+        }
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '0px 0px -8% 0px',
+      },
+    )
+
+    observer.observe(element)
+
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <article
+      ref={ref}
+      className={`rounded-[1.5rem] bg-[#f0ebe3] px-5 py-5 ring-1 ring-foreground/5 transition-all duration-1000 ease-out sm:px-6 sm:py-6 ${
+        visible
+          ? 'translate-y-0 opacity-100 blur-0'
+          : 'translate-y-5 opacity-0 blur-md'
+      }`}
+      style={{
+        transitionDelay: `${index * 100}ms`,
+      }}
+    >
+      <h3 className="font-serif text-xl leading-tight text-foreground md:text-2xl">
+        {title}
+      </h3>
+
+      <p className="mt-3 text-base leading-relaxed text-muted-foreground md:text-lg">
+        {text}
+      </p>
+    </article>
+  )
+}
+
 export function Identification() {
   return (
     <section
@@ -61,19 +120,13 @@ export function Identification() {
         </div>
 
         <div className="mx-auto mt-9 grid max-w-3xl gap-3 sm:grid-cols-2 md:mt-10">
-          {cards.map((card) => (
-            <article
+          {cards.map((card, index) => (
+            <RevealCard
               key={card.title}
-              className="rounded-[1.5rem] bg-[#f0ebe3] px-5 py-5 ring-1 ring-foreground/5 sm:px-6 sm:py-6"
-            >
-              <h3 className="font-serif text-xl leading-tight text-foreground md:text-2xl">
-                {card.title}
-              </h3>
-
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">
-                {card.text}
-              </p>
-            </article>
+              title={card.title}
+              text={card.text}
+              index={index}
+            />
           ))}
         </div>
 
