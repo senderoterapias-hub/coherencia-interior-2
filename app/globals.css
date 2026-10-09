@@ -1,0 +1,233 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-ink: var(--terracotta-ink);
+  --color-butter: var(--butter);
+  --color-sand: var(--sand);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+:root {
+  --background: #f4ecdf;
+  --foreground: #3b2a1f;
+  --card: #fbf6ee;
+  --card-foreground: #3b2a1f;
+  --popover: #fbf6ee;
+  --popover-foreground: #3b2a1f;
+  --primary: #5f6b3a;
+  --primary-foreground: #fbf6ee;
+  --secondary: #eadcc6;
+  --secondary-foreground: #3b2a1f;
+  --muted: #efe4d3;
+  --muted-foreground: #6a5444;
+  --accent: #c8795a;
+  --accent-foreground: #3b2a1f;
+  --destructive: #9a3b2a;
+  --border: #ddcdb4;
+  --input: #ddcdb4;
+  --ring: #5f6b3a;
+  --terracotta: #c8795a;
+  --terracotta-ink: #9a4f33;
+  --butter: #efd38c;
+  --sand: #e9dbc4;
+  --radius: 1.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    position: relative;
+  }
+
+  /* Paper grain over the whole page */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0.32;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.35 0 0 0 0 0.25 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  ::selection {
+    background-color: var(--butter);
+  }
+}
+
+@layer utilities {
+  .font-soft {
+    font-variation-settings: 'SOFT' 100, 'WONK' 1;
+  }
+
+  .blob {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    animation: morph 14s ease-in-out infinite alternate;
+  }
+
+  .blob-alt {
+    border-radius: 42% 58% 38% 62% / 48% 40% 60% 52%;
+    animation: morph-alt 17s ease-in-out infinite alternate;
+  }
+
+  .highlight {
+    background-image: linear-gradient(
+      transparent 58%,
+      color-mix(in oklab, var(--butter) 85%, transparent) 58%,
+      color-mix(in oklab, var(--butter) 85%, transparent) 92%,
+      transparent 92%
+    );
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    padding-inline: 0.1em;
+  }
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    border-radius: 40% 60% 42% 58% / 45% 58% 42% 55%;
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes morph-alt {
+  0% {
+    border-radius: 42% 58% 38% 62% / 48% 40% 60% 52%;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    border-radius: 58% 42% 60% 40% / 60% 52% 48% 40%;
+    transform: rotate(-10deg);
+  }
+}
+
+/* Pulso del botón */
+@keyframes cta-pulse {
+  0%,
+  70%,
+  100% {
+    scale: 1;
+  }
+
+  76% {
+    scale: 1.025;
+  }
+
+  82% {
+    scale: 1;
+  }
+}
+
+/* Resplandor que se expande alrededor del botón */
+@keyframes cta-glow {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  12% {
+    opacity: 0.75;
+  }
+
+  45% {
+    opacity: 0.4;
+    transform: scale(1.04);
+  }
+
+  75% {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+}
+
+/* CTA principal */
+.animate-cta-pulse {
+  position: relative;
+  isolation: isolate;
+  animation: cta-pulse 5s ease-in-out infinite;
+}
+
+/* Halo independiente del botón */
+.animate-cta-pulse::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -9px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: rgba(239, 211, 140, 0.55);
+  filter: blur(10px);
+  opacity: 0;
+  transform: scale(0.92);
+  animation: cta-glow 5s ease-out infinite;
+}
+
+/* Sensación física al tocar */
+.animate-cta-pulse:active {
+  scale: 0.97;
+  filter: brightness(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .blob,
+  .blob-alt,
+  .animate-cta-pulse,
+  .animate-cta-pulse::after {
+    animation: none;
+  }
+}
