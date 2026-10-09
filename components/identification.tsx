@@ -6,16 +6,8 @@ const cards = [
     text: 'Sentís que algo dentro tuyo está cambiando, aunque todavía no sabés qué.',
   },
   {
-    title: 'Hay cosas que ya no encajan',
-    text: 'Lugares, vínculos y formas de vivir que antes te hacían sentido ya no te llenan de la misma manera.',
-  },
-  {
     title: 'A veces conectás, a veces no',
     text: 'Por momentos sentís claridad y conexión. Después volvés a sentirte lejos de vos mism@.',
-  },
-  {
-    title: 'Dos búsquedas alejadas entre sí',
-    text: 'Oscilás entre cumplir metas materiales y una búsqueda más profunda que todavía no sabés cómo nombrar.',
   },
   {
     title: 'Temés perder',
