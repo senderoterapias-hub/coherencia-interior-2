@@ -5,40 +5,42 @@ export function About() {
       className="px-5 py-20 md:py-28"
     >
       <div className="mx-auto max-w-3xl">
-        <div className="mx-auto max-w-md text-center">
-          <div className="mx-auto overflow-hidden rounded-[2rem] border border-[#8e765d]/30 bg-[#eee5d7] shadow-[0_12px_30px_rgba(72,52,36,0.08)]">
+        {/* PRESENTACIÓN */}
+        <div className="text-center">
+          <div className="mx-auto size-24 overflow-hidden rounded-full border border-[#8e765d]/30 bg-[#eee5d7] shadow-[0_8px_24px_rgba(72,52,36,0.10)] md:size-28">
             <img
               src="/adrian.jpg"
               alt="Adrián Patrone"
-              className="aspect-[4/5] w-full object-cover"
+              className="h-full w-full object-cover"
             />
           </div>
 
           <h2
             id="about-title"
-            className="mt-7 font-serif font-soft text-[2.2rem] leading-[1.05] text-[#3f3025] md:text-5xl"
+            className="mt-6 font-serif font-soft text-[2.2rem] leading-[1.05] text-[#3f3025] md:text-5xl"
           >
             Adrián Patrone
           </h2>
 
-          <p className="mt-3 font-serif text-lg leading-relaxed text-[#6f583f] md:text-xl">
+          <p className="mx-auto mt-3 max-w-md font-serif text-lg leading-relaxed text-[#6f583f] md:text-xl">
             Acompaño procesos de transformación interior y conexión Divina
           </p>
         </div>
 
+        {/* DESPLEGABLE */}
         <details className="group mx-auto mt-8 max-w-2xl">
-          <summary className="flex cursor-pointer list-none items-center justify-center gap-3 border-y border-[#8e765d]/30 py-5 font-medium text-[#4d3b2e] transition-opacity hover:opacity-70 [&::-webkit-details-marker]:hidden">
+          <summary className="flex cursor-pointer list-none items-center justify-center gap-3 border-y border-[#8e765d]/30 py-5 text-base font-medium text-[#4d3b2e] transition-opacity hover:opacity-70 [&::-webkit-details-marker]:hidden">
             <span>Conocé un poco más sobre mí</span>
 
             <span
               aria-hidden="true"
-              className="text-xl transition-transform duration-300 group-open:rotate-45"
+              className="text-xl font-normal transition-transform duration-300 group-open:rotate-45"
             >
               +
             </span>
           </summary>
 
-          <div className="mt-8 space-y-6 text-base leading-[1.85] text-muted-foreground text-pretty md:text-lg">
+          <div className="mt-8 space-y-6 text-base leading-[1.8] text-muted-foreground text-pretty md:text-lg">
             <p>
               Hace más de 12 años, una pérdida cercana me llevó a hacerme una
               pregunta:
@@ -76,6 +78,21 @@ export function About() {
               Y al mismo tiempo, fui profundizando en mi conexión con la guía
               superior y la energía sanadora.
             </p>
+
+            {/* FOTO DEL RETIRO */}
+            <figure className="py-3">
+              <div className="overflow-hidden rounded-[1.5rem] border border-[#8e765d]/25 bg-[#eee5d7] shadow-[0_10px_30px_rgba(72,52,36,0.08)]">
+                <img
+                  src="/retiro.jpg"
+                  alt="Adrián acompañando un retiro"
+                  className="w-full object-cover"
+                />
+              </div>
+
+              <figcaption className="mt-3 text-center text-sm text-muted-foreground">
+                Acompañando un retiro
+              </figcaption>
+            </figure>
 
             <p>
               En aquel momento trabajaba en ventas inmobiliarias y tenía una
