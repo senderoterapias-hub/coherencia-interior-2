@@ -96,7 +96,7 @@ export function Identification() {
           <p className="font-serif text-2xl leading-snug text-[#3f3025] md:text-[1.7rem]">
             <span className="block">Quizás no estás perdido/a.</span>
 
-            <span className="mt-2 block italic text-[#6f583f]">
+            <span className="mt-2 block font-normal not-italic text-[#6f583f]">
               Quizás estás en el momento y lugar perfecto, siendo guiado hacia un cambio mayor que todavía no aprendiste a reconocer.
             </span>
           </p>
