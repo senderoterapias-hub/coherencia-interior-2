@@ -51,22 +51,24 @@ function RevealCard({
 
     if (!element) return
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true)
-          observer.unobserve(element)
-        }
-      },
-      {
-        threshold: 0.05,
-        rootMargin: '0px 0px -5% 0px',
-      },
-    )
+    const startObserver = window.setTimeout(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisible(true)
+            observer.unobserve(element)
+          }
+        },
+        {
+          threshold: 0.05,
+          rootMargin: '0px 0px -5% 0px',
+        },
+      )
 
-    observer.observe(element)
+      observer.observe(element)
+    }, 150)
 
-    return () => observer.disconnect()
+    return () => window.clearTimeout(startObserver)
   }, [])
 
   return (
@@ -78,7 +80,7 @@ function RevealCard({
           : 'translate-y-6 opacity-0 blur-[8px]'
       }`}
       style={{
-        transitionDelay: `${index * 80}ms`,
+        transitionDelay: `${index * 100}ms`,
         willChange: 'transform, opacity, filter',
       }}
     >
