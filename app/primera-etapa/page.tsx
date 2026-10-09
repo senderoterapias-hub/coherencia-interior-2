@@ -286,22 +286,26 @@ export default function PrimeraEtapaPage() {
       <section aria-labelledby="contacto-title" className="px-5 pb-8 pt-12 md:pb-12 md:pt-16">
         <div className="mx-auto max-w-2xl rounded-[2rem] bg-card p-8 text-center shadow-[0_18px_50px_rgba(59,42,31,0.08)] ring-1 ring-foreground/5 md:p-12">
           <Handwritten>si querés compartirlo</Handwritten>
+
           <h2 id="contacto-title" className="mt-3 font-serif font-soft text-[2.1rem] leading-[1.1] text-balance md:text-5xl">
             ¿Estás dando este paso y querés contarme cómo te sentís?
           </h2>
+
           <p className="mx-auto mt-6 max-w-xl leading-[1.8] text-muted-foreground text-pretty md:text-lg">
             Podés escribirme. No necesitás tener claro qué te pasa ni saber exactamente qué preguntar.
           </p>
+
           <p className="mx-auto mt-5 max-w-xl font-serif text-xl leading-snug text-foreground md:text-2xl">
             Estoy acá para escucharte y acompañarte en este primer paso.
           </p>
+
           <a
             href={FIRST_STAGE_WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-8 inline-flex min-h-14 w-full items-center justify-center rounded-full bg-primary px-7 py-4 text-base font-medium text-primary-foreground shadow-[0_3px_0_0_rgba(59,42,31,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#535e31] hover:shadow-[0_5px_0_0_rgba(59,42,31,0.18)] sm:w-auto"
           >
-            Contarme cómo me siento
+            Contame cómo te sentís
           </a>
         </div>
       </section>
