@@ -2,29 +2,35 @@ export function About() {
   return (
     <section
       aria-labelledby="about-title"
-      className="px-5 py-20 md:py-28"
+      className="px-5 py-16 md:py-24"
     >
       <div className="mx-auto max-w-3xl">
         {/* PRESENTACIÓN */}
-        <div className="text-center">
-          <div className="mx-auto size-24 overflow-hidden rounded-full border border-[#8e765d]/30 bg-[#eee5d7] shadow-[0_8px_24px_rgba(72,52,36,0.10)] md:size-28">
+        <div className="flex items-center justify-center gap-5 sm:gap-7">
+          <div className="min-w-0 flex-1 text-right">
+            <p className="font-serif text-lg leading-relaxed text-[#6f583f] md:text-xl">
+              Mi nombre es
+            </p>
+
+            <h2
+              id="about-title"
+              className="mt-1 font-serif font-soft text-[2rem] leading-[1.05] text-[#3f3025] sm:text-[2.3rem] md:text-5xl"
+            >
+              Adrián Patrone
+            </h2>
+
+            <p className="mt-3 font-serif text-base leading-relaxed text-[#6f583f] sm:text-lg md:text-xl">
+              Acompaño procesos de transformación interior y conexión Divina
+            </p>
+          </div>
+
+          <div className="size-24 shrink-0 overflow-hidden rounded-full border border-[#8e765d]/30 bg-[#eee5d7] shadow-[0_8px_24px_rgba(72,52,36,0.10)] sm:size-28 md:size-32">
             <img
               src="/adrian.jpg"
               alt="Adrián Patrone"
               className="h-full w-full object-cover"
             />
           </div>
-
-          <h2
-            id="about-title"
-            className="mt-6 font-serif font-soft text-[2.2rem] leading-[1.05] text-[#3f3025] md:text-5xl"
-          >
-            Adrián Patrone
-          </h2>
-
-          <p className="mx-auto mt-3 max-w-md font-serif text-lg leading-relaxed text-[#6f583f] md:text-xl">
-            Acompaño procesos de transformación interior y conexión Divina
-          </p>
         </div>
 
         {/* DESPLEGABLE */}
@@ -42,12 +48,12 @@ export function About() {
 
           <div className="mt-8 space-y-6 text-base leading-[1.8] text-muted-foreground text-pretty md:text-lg">
             <p>
-              Hace más de 12 años, una pérdida cercana me llevó a hacerme una
+              Hace más de 12 años, una muerte cercana me llevó a hacerme una
               pregunta:
             </p>
 
             <p className="text-center font-serif text-2xl leading-snug text-[#3f3025] md:text-3xl">
-              ¿Qué hay después de la muerte?
+              ¿La vida es solo esto que veo o hay más?
             </p>
 
             <p>
